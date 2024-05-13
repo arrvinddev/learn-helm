@@ -11,4 +11,9 @@ spec:
        - containerPort: {{ . }}
       {{- end }}
 
+      env: 
+       {{- range .Values.ports }}
+       - name: {{ .key }}
+       {{- end }}
+
 
